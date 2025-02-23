@@ -37,7 +37,7 @@ pip install tqdm wandb<br>
 
 ```python
 from galore_torch import StableSPAM
-# define param groups as spam_params and non_spam_params
+
 optimizer = StableSPAM(model.parameters(), lr=0.001,gamma1=0.7,gamma2=0.9,gamma3=0.999,total_T=20000)
 #total_T is set to the total update steps. [ optional ]
 ```
