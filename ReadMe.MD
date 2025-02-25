@@ -28,8 +28,8 @@ This paper comprehensively evaluates several recently proposed optimizers for 4-
 
 ### Setup
 Our repository is built on top of [GaLore](https://github.com/jiaweizzhao/GaLore). You can configure the environment using the following command lines:
-conda create -n spam python=3.11 -y <br>
-conda activate spam<br>
+conda create -n stablespam python=3.11 -y <br>
+conda activate stablespam<br>
 pip3 install torch torchvision torchaudio<br>
 pip install transformers==4.31.0<br>
 pip install tqdm wandb<br>
