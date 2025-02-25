@@ -1,5 +1,5 @@
 # SPAM
-This repo contains the pre-release version of StableSPAM optimizer, proposed by [Stable-SPAM: How to Train in 4-Bit More Stably than 16-Bit Adam].
+This repo contains the pre-release version of StableSPAM optimizer, proposed by [Stable-SPAM: How to Train in 4-Bit More Stably than 16-Bit Adam](https://arxiv.org/pdf/2502.17055?)
 
 we propose Stable-SPAM, which incorporates enhanced gradient normalization and clipping techniques.
 
