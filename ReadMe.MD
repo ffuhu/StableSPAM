@@ -105,13 +105,13 @@ torchrun --standalone --nproc_per_node 4 main_pretrain.py \
 ### example: BF16 Training LLaMA-350M 
 ```
 torchrun --standalone --nproc_per_node 4 main_pretrain.py \
-    --model_config configs/llama_350m.json \
+    --model_config configs/llama_130m.json \
     --eval_every 1000 \
     --save_every 100000 \
     --dtype bfloat16 \
     --batch_size 128 \
     --total_batch_size 512 \
-    --lr 0.0004 \
+    --lr 0.0008 \
     --warmup_steps 2000 \
     --num_training_steps 20000 \
     --optimizer stablespam \
