@@ -102,7 +102,7 @@ torchrun --standalone --nproc_per_node 4 main_pretrain.py \
     --update_proj_gap 500 
 ```
 
-### example: BF16 Training LLaMA-350M 
+### example: BF16 Training LLaMA-130M 
 ```
 torchrun --standalone --nproc_per_node 4 main_pretrain.py \
     --model_config configs/llama_130m.json \
