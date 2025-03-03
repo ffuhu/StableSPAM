@@ -123,7 +123,7 @@ torchrun --standalone --nproc_per_node 4 main_pretrain.py \
     --gamma1 0.85 \
     --gamma2 0.99999 \
     --gamma3 0.999 \
-    --update_proj_gap 500 
+    --update_proj_gap 1000 
 ```
 
 ## Acknowledgement

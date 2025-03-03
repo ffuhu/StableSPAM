@@ -24,7 +24,7 @@ class CosineDecay(object):
 class StableSPAM(Optimizer):
 
     def __init__(self, params, lr=1e-3, betas=(0.9, 0.999), eps=1e-8,
-                 weight_decay=0, amsgrad=False,gamma1=0.7,gamma2=0.9,theta=0.999,total_T=None,eta_min=0.5,update_proj_gap=1000):
+                 weight_decay=0, amsgrad=False,gamma1=0.7,gamma2=0.9,gamma3=0.999,total_T=None,eta_min=0.5,update_proj_gap=1000):
         if not 0.0 <= lr:
             raise ValueError("Invalid learning rate: {}".format(lr))
         if not 0.0 <= eps:
@@ -38,7 +38,7 @@ class StableSPAM(Optimizer):
         super(StableSPAM, self).__init__(params, defaults)
         self.gamma1=gamma1 # 0.85 & 0.5 & 0.8,0.9
         self.gamma2=gamma2 # 0.99999 # 0.999,0.9999
-        self.theta=theta # 0.999
+        self.theta=gamma3 # 0.999
         self.total_T=total_T
         if self.total_T is not None:
             self.warmup=CosineDecay(1.0,total_T,eta_min=eta_min)   #total_T is the totoal number of update steps
@@ -142,8 +142,8 @@ class StableSPAM(Optimizer):
 
                 c_norm_t=m_norm_hat/(torch.sqrt(v_norm_hat)+group["eps"])
                 # print("grad_nrom",grad_norm,"c_norm",c_norm_t,"st",s_t,m_norm_t)
-
-                grad=grad/grad_norm*c_norm_t
+                if grad_norm>0:
+                    grad=grad/grad_norm*c_norm_t
               
 
                 # print(m_norm_t)

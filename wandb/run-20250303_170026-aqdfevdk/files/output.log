@@ -1,0 +1,134 @@
+2025-03-03 17:00:34.922 | INFO     | utils.dataloader:setup_dataset:20 - Shuffling data with seed 42
+/home/huangti/miniconda3/envs/spam/lib/python3.11/site-packages/transformers/generation/configuration_utils.py:607: UserWarning: `pad_token_id` should be positive but got -1. This will cause errors when batch generating, if there is padding. Please set `pad_token_id` explicitly as `model.generation_config.pad_token_id=PAD_TOKEN_ID` to avoid errors in generation
+  warnings.warn(
+wandb: WARNING Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+Update steps:   0%|                                   | 0/20000 [00:00<?, ?it/s]2025-03-03 17:00:37.042 | INFO     | __main__:main:182 -
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 768, padding_idx=31999)
+    (layers): ModuleList(
+      (0-11): 12 x LlamaDecoderLayer(
+        (self_attn): LlamaAttention(
+          (q_proj): Linear(in_features=768, out_features=768, bias=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=False)
+          (v_proj): Linear(in_features=768, out_features=768, bias=False)
+          (o_proj): Linear(in_features=768, out_features=768, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear(in_features=768, out_features=2048, bias=False)
+          (down_proj): Linear(in_features=2048, out_features=768, bias=False)
+          (up_proj): Linear(in_features=768, out_features=2048, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+  )
+  (lm_head): Linear(in_features=768, out_features=32000, bias=False)
+)
+
+2025-03-03 17:00:37.043 | INFO     | __main__:main:183 - Total params: 134.11M
+2025-03-03 17:00:37.043 | INFO     | __main__:main:190 - Trainable params: 134.11M
+2025-03-03 17:00:37.043 | INFO     | __main__:main:196 - Saving model to /scratch-shared/saved every 100000 update steps
+hyperparameters: 0.85 0.99999 0.999 1000
+/home/huangti/miniconda3/envs/spam/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: cuDNN SDPA backward got grad_output.strides() != output.strides(), attempting to materialize a grad_output with matching strides... (Triggered internally at /opt/conda/conda-bld/pytorch_1728945379270/work/aten/src/ATen/native/cudnn/MHA.cpp:674.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Update steps:   5%|█                     | 1000/20000 [03:31<1:01:51,  5.12it/s]2025-03-03 17:04:09.002 | INFO     | __main__:main:337 - Performing evaluation at step 1000
+/scratch-shared/HTJ/modules/datasets_modules/datasets/c4/584d57ebe81c209b6c7f31727066d2c4b4bba37cb7092cdd83083d5ec11207db/c4.py:53: FutureWarning: Dataset 'c4' is deprecated and will be deleted. Use 'allenai/c4' instead.
+  warnings.warn(
+2025-03-03 17:04:11.054 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 2.05 seconds
+2025-03-03 17:04:11.057 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 2.05 seconds
+2025-03-03 17:04:26.375 | INFO     | __main__:main:349 - Eval loss at step 1000: 4.545572996139526
+Update steps:  10%|██▍                     | 2000/20000 [07:01<57:25,  5.22it/s]2025-03-03 17:07:38.505 | INFO     | __main__:main:337 - Performing evaluation at step 2000
+2025-03-03 17:07:39.476 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.97 seconds
+2025-03-03 17:07:39.478 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.97 seconds
+2025-03-03 17:07:51.623 | INFO     | __main__:main:349 - Eval loss at step 2000: 3.8370099663734436
+Update steps:  15%|███▌                    | 3000/20000 [10:27<55:19,  5.12it/s]2025-03-03 17:11:04.589 | INFO     | __main__:main:337 - Performing evaluation at step 3000
+2025-03-03 17:11:05.541 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.95 seconds
+2025-03-03 17:11:05.543 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.95 seconds
+2025-03-03 17:11:22.543 | INFO     | __main__:main:349 - Eval loss at step 3000: 3.627144694328308
+Update steps:  20%|████▊                   | 4000/20000 [13:56<51:56,  5.13it/s]2025-03-03 17:14:33.875 | INFO     | __main__:main:337 - Performing evaluation at step 4000
+2025-03-03 17:14:35.002 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.13 seconds
+2025-03-03 17:14:35.004 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.13 seconds
+2025-03-03 17:14:51.670 | INFO     | __main__:main:349 - Eval loss at step 4000: 3.5112209916114807
+Update steps:  25%|██████                  | 5000/20000 [17:27<48:26,  5.16it/s]2025-03-03 17:18:04.229 | INFO     | __main__:main:337 - Performing evaluation at step 5000
+2025-03-03 17:18:12.055 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 7.83 seconds
+2025-03-03 17:18:12.070 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 7.84 seconds
+2025-03-03 17:18:23.250 | INFO     | __main__:main:349 - Eval loss at step 5000: 3.4361979961395264
+Update steps:  30%|███████▏                | 6000/20000 [20:57<45:05,  5.17it/s]2025-03-03 17:21:34.245 | INFO     | __main__:main:337 - Performing evaluation at step 6000
+2025-03-03 17:21:35.204 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.96 seconds
+2025-03-03 17:21:35.205 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.96 seconds
+2025-03-03 17:21:46.963 | INFO     | __main__:main:349 - Eval loss at step 6000: 3.384574294090271
+Update steps:  35%|████████▍               | 7000/20000 [24:22<42:09,  5.14it/s]2025-03-03 17:24:59.748 | INFO     | __main__:main:337 - Performing evaluation at step 7000
+2025-03-03 17:25:00.706 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.96 seconds
+2025-03-03 17:25:00.708 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.96 seconds
+2025-03-03 17:25:13.207 | INFO     | __main__:main:349 - Eval loss at step 7000: 3.3391162157058716
+Update steps:  40%|█████████▌              | 8000/20000 [27:55<38:29,  5.19it/s]2025-03-03 17:28:33.055 | INFO     | __main__:main:337 - Performing evaluation at step 8000
+2025-03-03 17:28:34.011 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.96 seconds
+2025-03-03 17:28:34.013 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.96 seconds
+2025-03-03 17:28:45.999 | INFO     | __main__:main:349 - Eval loss at step 8000: 3.301585555076599
+Update steps:  45%|██████████▊             | 9000/20000 [31:22<35:19,  5.19it/s]2025-03-03 17:31:59.331 | INFO     | __main__:main:337 - Performing evaluation at step 9000
+2025-03-03 17:32:00.475 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.14 seconds
+2025-03-03 17:32:00.476 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.14 seconds
+2025-03-03 17:32:11.896 | INFO     | __main__:main:349 - Eval loss at step 9000: 3.273246109485626
+Update steps:  50%|███████████▌           | 10000/20000 [34:47<31:53,  5.23it/s]2025-03-03 17:35:24.096 | INFO     | __main__:main:337 - Performing evaluation at step 10000
+2025-03-03 17:35:25.234 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.14 seconds
+2025-03-03 17:35:25.237 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.14 seconds
+2025-03-03 17:35:36.968 | INFO     | __main__:main:349 - Eval loss at step 10000: 3.244600296020508
+Update steps:  55%|████████████▋          | 11000/20000 [38:20<28:43,  5.22it/s]2025-03-03 17:38:57.187 | INFO     | __main__:main:337 - Performing evaluation at step 11000
+2025-03-03 17:38:58.300 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.11 seconds
+2025-03-03 17:38:58.301 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.11 seconds
+2025-03-03 17:39:09.770 | INFO     | __main__:main:349 - Eval loss at step 11000: 3.218826711177826
+Update steps:  60%|█████████████▊         | 12000/20000 [41:45<25:39,  5.20it/s]2025-03-03 17:42:22.568 | INFO     | __main__:main:337 - Performing evaluation at step 12000
+2025-03-03 17:42:23.622 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.05 seconds
+2025-03-03 17:42:23.624 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.05 seconds
+2025-03-03 17:42:35.291 | INFO     | __main__:main:349 - Eval loss at step 12000: 3.19699764251709
+Update steps:  65%|██████████████▉        | 13000/20000 [45:12<22:33,  5.17it/s]2025-03-03 17:45:49.224 | INFO     | __main__:main:337 - Performing evaluation at step 13000
+2025-03-03 17:45:50.234 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.01 seconds
+2025-03-03 17:45:50.236 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.01 seconds
+2025-03-03 17:46:02.475 | INFO     | __main__:main:349 - Eval loss at step 13000: 3.17746639251709
+Update steps:  70%|████████████████       | 14000/20000 [48:37<19:04,  5.24it/s]2025-03-03 17:49:14.791 | INFO     | __main__:main:337 - Performing evaluation at step 14000
+2025-03-03 17:49:15.803 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.01 seconds
+2025-03-03 17:49:15.805 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.01 seconds
+2025-03-03 17:49:27.566 | INFO     | __main__:main:349 - Eval loss at step 14000: 3.1578586101531982
+Update steps:  75%|█████████████████▎     | 15000/20000 [52:05<15:52,  5.25it/s]2025-03-03 17:52:42.503 | INFO     | __main__:main:337 - Performing evaluation at step 15000
+2025-03-03 17:52:43.521 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.02 seconds
+2025-03-03 17:52:43.522 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.02 seconds
+2025-03-03 17:52:55.045 | INFO     | __main__:main:349 - Eval loss at step 15000: 3.1422335505485535
+Update steps:  80%|██████████████████▍    | 16000/20000 [55:39<12:36,  5.28it/s]2025-03-03 17:56:16.336 | INFO     | __main__:main:337 - Performing evaluation at step 16000
+2025-03-03 17:56:17.321 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.98 seconds
+2025-03-03 17:56:17.323 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.99 seconds
+2025-03-03 17:56:29.062 | INFO     | __main__:main:349 - Eval loss at step 16000: 3.1292510628700256
+Update steps:  85%|███████████████████▌   | 17000/20000 [59:06<09:30,  5.26it/s]2025-03-03 17:59:43.892 | INFO     | __main__:main:337 - Performing evaluation at step 17000
+2025-03-03 17:59:44.832 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.94 seconds
+2025-03-03 17:59:44.834 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.94 seconds
+2025-03-03 17:59:56.467 | INFO     | __main__:main:349 - Eval loss at step 17000: 3.1190640926361084
+Update steps:  90%|██████████████████▉  | 18000/20000 [1:02:29<06:20,  5.25it/s]2025-03-03 18:03:06.539 | INFO     | __main__:main:337 - Performing evaluation at step 18000
+2025-03-03 18:03:07.556 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.02 seconds
+2025-03-03 18:03:07.558 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.02 seconds
+2025-03-03 18:03:19.344 | INFO     | __main__:main:349 - Eval loss at step 18000: 3.1120941638946533
+Update steps:  95%|███████████████████▉ | 19000/20000 [1:05:53<03:09,  5.28it/s]2025-03-03 18:06:30.311 | INFO     | __main__:main:337 - Performing evaluation at step 19000
+2025-03-03 18:06:31.378 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.07 seconds
+2025-03-03 18:06:31.379 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.07 seconds
+2025-03-03 18:06:49.953 | INFO     | __main__:main:349 - Eval loss at step 19000: 3.1078048944473267
+Update steps: 100%|█████████████████████| 20000/20000 [1:09:25<00:00,  5.29it/s]2025-03-03 18:10:03.065 | INFO     | __main__:main:337 - Performing evaluation at step 20000
+2025-03-03 18:10:04.015 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 0.95 seconds
+2025-03-03 18:10:04.016 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 0.95 seconds
+2025-03-03 18:10:15.686 | INFO     | __main__:main:349 - Eval loss at step 20000: 3.1045114398002625
+Update steps: 20001it [1:09:38,  3.98s/it]                                      2025-03-03 18:10:15.880 | INFO     | __main__:main:240 - Reached max number of update steps (f20000). Stopping training.
+2025-03-03 18:10:15.880 | INFO     | __main__:main:241 - Rank 0 stopping training.
+2025-03-03 18:10:16.884 | INFO     | __main__:main:382 - Training finished
+Update steps: 20001it [1:09:39,  4.79it/s]
+2025-03-03 18:10:16.884 | INFO     | __main__:main:387 - Saving model and optimizer to /scratch-shared/saved/model_20001, update step 20001
+saving model weight without quantized layer
+2025-03-03 18:10:17.766 | INFO     | __main__:main:414 - Running final evaluation
+/scratch-shared/HTJ/modules/datasets_modules/datasets/c4/584d57ebe81c209b6c7f31727066d2c4b4bba37cb7092cdd83083d5ec11207db/c4.py:53: FutureWarning: Dataset 'c4' is deprecated and will be deleted. Use 'allenai/c4' instead.
+  warnings.warn(
+2025-03-03 18:10:19.289 | INFO     | utils.eval:evaluate_model:26 - Loaded validation dataset in 1.32 seconds
+2025-03-03 18:10:19.291 | INFO     | utils.eval:evaluate_model:43 - Eval set prepared in 1.32 seconds
+2025-03-03 18:10:30.491 | INFO     | __main__:main:432 - Final eval loss: 3.1045114398002625
+2025-03-03 18:10:30.492 | INFO     | __main__:main:434 - Script finished successfully
+Rank 0 finished successfully

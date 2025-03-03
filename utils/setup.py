@@ -9,7 +9,7 @@ from transformers import LlamaForCausalLM as HF_LlamaForCausalLM
 from .modeling_llama import LlamaForCausalLM
 from .lions import Lion as Lion_we
 
-import bitsandbytes as bnb
+# import bitsandbytes as bnb
 from galore_torch import GaLoreAdamW, GaLoreAdamW8bit, GaLoreAdafactor, QGaLoreAdamW8bit, QGaLoreAdamW8bit_simulate, SPAM,StableSPAM,Adam_mini_our
 
 from .training_utils import get_scheculer
@@ -176,7 +176,7 @@ def setup_optimization(args, model, trainable_params, param_groups, id_galore_pa
         optimizer = SPAM(param_groups, lr = args.lr, weight_decay = args.weight_decay)
         ########################################################
     elif args.optimizer.lower() == "stablespam":
-        optimizer = StableSPAM(trainable_params, lr = args.lr, weight_decay = args.weight_decay,gamma1=args.gamma1,gamma2=args.gamma2,theta=args.gamma3,eta_min=args.eta,update_proj_gap=args.update_proj_gap,total_T=args.total_T)
+        optimizer = StableSPAM(trainable_params, lr = args.lr, weight_decay = args.weight_decay,gamma1=args.gamma1,gamma2=args.gamma2,gamma3=args.gamma3,eta_min=args.eta,update_proj_gap=args.update_proj_gap,total_T=args.total_T)
     elif args.optimizer.lower() == "adafactor":
         args.beta1 = None if args.beta1 == 0.0 else args.beta1
         optimizer = transformers.optimization.Adafactor(
@@ -206,8 +206,8 @@ def setup_optimization(args, model, trainable_params, param_groups, id_galore_pa
             warmup_init=False,
         )
 
-    elif args.optimizer.lower() == "adam8bit":
-        optimizer = bnb.optim.Adam8bit(trainable_params, lr=args.lr, weight_decay=args.weight_decay)
+    # elif args.optimizer.lower() == "adam8bit":
+    #     optimizer = bnb.optim.Adam8bit(trainable_params, lr=args.lr, weight_decay=args.weight_decay)
     
     elif args.optimizer.lower() == "galore_adamw8bit":
         optimizer = GaLoreAdamW8bit(param_groups, lr=args.lr, weight_decay=args.weight_decay, betas=(args.beta1, args.beta2))
@@ -228,8 +228,8 @@ def setup_optimization(args, model, trainable_params, param_groups, id_galore_pa
                     optimizer_dict[p] = GaLoreAdamW8bit([{'params': [p], 
                         'rank': args.rank, 'update_proj_gap': args.update_proj_gap * 2, 
                         'scale': args.galore_scale, 'proj_type': args.proj_type}], lr=args.lr, weight_decay=args.weight_decay)
-                else:
-                    optimizer_dict[p] = bnb.optim.Adam8bit([p], lr=args.lr, weight_decay=args.weight_decay)
+                # else:
+                #     optimizer_dict[p] = bnb.optim.Adam8bit([p], lr=args.lr, weight_decay=args.weight_decay)
 
         # get scheduler dict
         scheduler_dict = {}
@@ -267,9 +267,9 @@ def setup_optimization(args, model, trainable_params, param_groups, id_galore_pa
                     'scale': args.galore_scale, 'proj_type': args.proj_type,
                     "quant": args.proj_quant,'quant_n_bit': args.proj_bits, 'quant_group_size': args.proj_group_size,
                     'cos_threshold': args.cos_threshold, 'gamma_proj': args.gamma_proj, 'queue_size': args.queue_size}], lr=args.lr, weight_decay=args.weight_decay)
-            else:
-                if p.requires_grad:
-                    optimizer_dict[p] = bnb.optim.Adam8bit([p], lr=args.lr, weight_decay=args.weight_decay)
+            # else:
+            #     if p.requires_grad:
+            #         optimizer_dict[p] = bnb.optim.Adam8bit([p], lr=args.lr, weight_decay=args.weight_decay)
 
         # get scheduler dict
         scheduler_dict = {}

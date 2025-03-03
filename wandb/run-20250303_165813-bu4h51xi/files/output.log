@@ -1,0 +1,39 @@
+2025-03-03 16:58:21.812 | INFO     | utils.dataloader:setup_dataset:20 - Shuffling data with seed 42
+/home/huangti/miniconda3/envs/spam/lib/python3.11/site-packages/transformers/generation/configuration_utils.py:607: UserWarning: `pad_token_id` should be positive but got -1. This will cause errors when batch generating, if there is padding. Please set `pad_token_id` explicitly as `model.generation_config.pad_token_id=PAD_TOKEN_ID` to avoid errors in generation
+  warnings.warn(
+wandb: WARNING Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+Update steps:   0%|                                   | 0/20000 [00:00<?, ?it/s]2025-03-03 16:58:23.980 | INFO     | __main__:main:182 -
+LlamaForCausalLM(
+  (model): LlamaModel(
+    (embed_tokens): Embedding(32000, 768, padding_idx=31999)
+    (layers): ModuleList(
+      (0-11): 12 x LlamaDecoderLayer(
+        (self_attn): LlamaAttention(
+          (q_proj): Linear(in_features=768, out_features=768, bias=False)
+          (k_proj): Linear(in_features=768, out_features=768, bias=False)
+          (v_proj): Linear(in_features=768, out_features=768, bias=False)
+          (o_proj): Linear(in_features=768, out_features=768, bias=False)
+          (rotary_emb): LlamaRotaryEmbedding()
+        )
+        (mlp): LlamaMLP(
+          (gate_proj): Linear(in_features=768, out_features=2048, bias=False)
+          (down_proj): Linear(in_features=2048, out_features=768, bias=False)
+          (up_proj): Linear(in_features=768, out_features=2048, bias=False)
+          (act_fn): SiLU()
+        )
+        (input_layernorm): LlamaRMSNorm()
+        (post_attention_layernorm): LlamaRMSNorm()
+      )
+    )
+    (norm): LlamaRMSNorm()
+  )
+  (lm_head): Linear(in_features=768, out_features=32000, bias=False)
+)
+
+2025-03-03 16:58:23.980 | INFO     | __main__:main:183 - Total params: 134.11M
+2025-03-03 16:58:23.980 | INFO     | __main__:main:190 - Trainable params: 134.11M
+2025-03-03 16:58:23.980 | INFO     | __main__:main:196 - Saving model to /scratch-shared/saved every 100000 update steps
+hyperparameters: 0.85 0.99999 0.999 1000
+/home/huangti/miniconda3/envs/spam/lib/python3.11/site-packages/torch/autograd/graph.py:825: UserWarning: cuDNN SDPA backward got grad_output.strides() != output.strides(), attempting to materialize a grad_output with matching strides... (Triggered internally at /opt/conda/conda-bld/pytorch_1728945379270/work/aten/src/ATen/native/cudnn/MHA.cpp:674.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Update steps:   1%|▎                      | 267/20000 [01:03<1:02:27,  5.27it/s]

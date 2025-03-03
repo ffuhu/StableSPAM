@@ -1,0 +1,8 @@
+{"time":"2025-03-03T16:58:13.061928353+01:00","level":"INFO","msg":"using version","core version":"0.18.5"}
+{"time":"2025-03-03T16:58:13.061990742+01:00","level":"INFO","msg":"created symlink","path":"/gpfs/home2/huangti/Projects/StableSPAM/wandb/run-20250303_165813-bu4h51xi/logs/debug-core.log"}
+{"time":"2025-03-03T16:58:13.27239434+01:00","level":"INFO","msg":"created new stream","id":"bu4h51xi"}
+{"time":"2025-03-03T16:58:13.272453849+01:00","level":"INFO","msg":"stream: started","id":"bu4h51xi"}
+{"time":"2025-03-03T16:58:13.272503739+01:00","level":"INFO","msg":"sender: started","stream_id":"bu4h51xi"}
+{"time":"2025-03-03T16:58:13.272511129+01:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"bu4h51xi"}}
+{"time":"2025-03-03T16:58:13.272532749+01:00","level":"INFO","msg":"handler: started","stream_id":{"value":"bu4h51xi"}}
+{"time":"2025-03-03T16:58:13.577104416+01:00","level":"INFO","msg":"Starting system monitor"}

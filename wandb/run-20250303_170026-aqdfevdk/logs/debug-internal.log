@@ -1,0 +1,16 @@
+{"time":"2025-03-03T17:00:26.357197684+01:00","level":"INFO","msg":"using version","core version":"0.18.5"}
+{"time":"2025-03-03T17:00:26.357262093+01:00","level":"INFO","msg":"created symlink","path":"/gpfs/home2/huangti/Projects/StableSPAM/wandb/run-20250303_170026-aqdfevdk/logs/debug-core.log"}
+{"time":"2025-03-03T17:00:26.564030273+01:00","level":"INFO","msg":"created new stream","id":"aqdfevdk"}
+{"time":"2025-03-03T17:00:26.564114743+01:00","level":"INFO","msg":"stream: started","id":"aqdfevdk"}
+{"time":"2025-03-03T17:00:26.564141442+01:00","level":"INFO","msg":"sender: started","stream_id":"aqdfevdk"}
+{"time":"2025-03-03T17:00:26.564103963+01:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"aqdfevdk"}}
+{"time":"2025-03-03T17:00:26.564155622+01:00","level":"INFO","msg":"handler: started","stream_id":{"value":"aqdfevdk"}}
+{"time":"2025-03-03T17:00:26.778643829+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-03T18:10:30.533299146+01:00","level":"INFO","msg":"stream: closing","id":"aqdfevdk"}
+{"time":"2025-03-03T18:10:30.533364635+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-03T18:10:30.534620855+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-03T18:10:32.620664432+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-03T18:10:32.773978396+01:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"aqdfevdk"}}
+{"time":"2025-03-03T18:10:32.774051915+01:00","level":"INFO","msg":"sender: closed","stream_id":"aqdfevdk"}
+{"time":"2025-03-03T18:10:32.774039066+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"aqdfevdk"}}
+{"time":"2025-03-03T18:10:32.775108637+01:00","level":"INFO","msg":"stream: closed","id":"aqdfevdk"}
