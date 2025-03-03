@@ -39,8 +39,10 @@ pip install tqdm wandb<br>
 from galore_torch import StableSPAM
 
 optimizer = StableSPAM(model.parameters(), lr=0.001,gamma1=0.7,gamma2=0.9,gamma3=0.999,total_T=20000)
-#total_T is set to the total update steps. [ optional ]
 ```
+> \[!Note\]
+>
+> total_T:  is set to the total number of update steps. It will lead to a better LLM training but may not be necessary for other tasks.
 
 ### example: FP4 Training LLaMA-350M  
 ```
