@@ -12,6 +12,9 @@ we propose Stable-SPAM, which incorporates enhanced gradient normalization and c
 <div align="center">
   <img src="Fig3.jpg" alt="Image 2" style="width: 900px; margin: 0 auto;">
 </div>
+<div align="center">
+  <img src="Figure4.jpg" alt="Image 2" style="width: 900px; margin: 0 auto;">
+</div>
 
 
 ## Abstract
