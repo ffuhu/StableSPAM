@@ -41,7 +41,7 @@ pip install tqdm wandb<br>
 ```python
 from galore_torch import StableSPAM
 
-optimizer = StableSPAM(model.parameters(), lr=0.001,gamma1=0.7,gamma2=0.9,gamma3=0.999,total_T=20000)
+optimizer = StableSPAM(model.parameters(), lr=0.001,gamma1=0.7,gamma2=0.9,gamma3=0.999,total_T=20000,update_proj_gap=1000)
 ```
 > \[!Note\]
 >
