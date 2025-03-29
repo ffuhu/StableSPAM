@@ -49,7 +49,7 @@ class StableSPAM(Optimizer):
         # print("hyperparameters:",gamma1,gamma2,theta,update_proj_gap)
 
     def __setstate__(self, state):
-        super(AdamW, self).__setstate__(state)
+        super(StableSPAM, self).__setstate__(state)
         for group in self.param_groups:
             group.setdefault('amsgrad', False)
     @torch.no_grad()
