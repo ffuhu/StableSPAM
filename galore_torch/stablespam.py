@@ -46,7 +46,7 @@ class StableSPAM(Optimizer):
         if self.gamma1==-1:
             self.gamma1=betas[0]
         self.update_proj_gap=update_proj_gap
-        print("hyperparameters:",gamma1,gamma2,theta,update_proj_gap)
+        # print("hyperparameters:",gamma1,gamma2,theta,update_proj_gap)
 
     def __setstate__(self, state):
         super(AdamW, self).__setstate__(state)
